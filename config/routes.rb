@@ -55,4 +55,5 @@ Rails.application.routes.draw do
   #   end
   get 'tweets' => 'tweets#index'
   get 'tweets/new' => 'tweets/new'
+  post 'tweets' => 'tweets#create'
 end
