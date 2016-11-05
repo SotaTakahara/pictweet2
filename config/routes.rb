@@ -54,4 +54,5 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
   get 'tweets' => 'tweets#index'
+  get 'tweets/new' => 'tweets/new'
 end
