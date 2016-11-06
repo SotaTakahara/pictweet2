@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
+  root 'tweets#index'
+  resources :tweets do
+    resources :comments, only: [:create]
+  end
+    resources :users, only: [:show]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -54,12 +59,13 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-  get 'tweets' => 'tweets#index'
-  get 'tweets/new' => 'tweets#new'
-  post 'tweets' => 'tweets#create'
-  root 'tweets#index'
-  get  'users/:id' => 'users#show'
-  delete 'tweets/:id' => 'tweets#destroy'
-  get   'tweets/:id/edit' => 'tweets#edit'
-  patch 'tweets/:id' => 'tweets#update'
+  # get 'tweets' => 'tweets#index'
+  # get 'tweets/new' => 'tweets#new'
+  # post 'tweets' => 'tweets#create'
+  # root 'tweets#index'
+  # get  'users/:id' => 'users#show'
+  # delete 'tweets/:id' => 'tweets#destroy'
+  # get   'tweets/:id/edit' => 'tweets#edit'
+  # patch 'tweets/:id' => 'tweets#update'
+  # get 'tweets/:id' => 'tweets#show'    
 end 
