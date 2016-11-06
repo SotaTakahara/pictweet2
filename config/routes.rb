@@ -58,5 +58,5 @@ Rails.application.routes.draw do
   get 'tweets/new' => 'tweets#new'
   post 'tweets' => 'tweets#create'
   root 'tweets#index'
-
-end
+  get  'users/:id' => 'users#show'
+end 
